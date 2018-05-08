@@ -1,0 +1,19 @@
+version: '1.0'
+steps:
+
+  # TODO: properly grab CHART_REPO_URL from the chartmuseum release
+  export_chart_repo_url:
+    image: codefresh/cfstep-helm:2.7.2
+    environment:
+    - KUBE_CONTEXT=local
+    commands:
+    - export CHART_REPO_URL="$(kubectl get pods)"
+    - cf_export CHART_REPO_URL=$CHART_REPO_URL
+
+  install_hellocf:
+    image: codefresh/cfstep-helm:2.7.2
+    environment:
+    - ACTION=install
+    - CHART_REF=hello-cf
+    - RELEASE_NAME=hellocf-staging
+    - KUBE_CONTEXT=local
