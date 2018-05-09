@@ -31,3 +31,8 @@ Request ID: 48ba0db334a6ed165e783469c2af868f
 
 The images were created to be used as simple backends for various load balancing demos.
  
+
+Build Status   
+[![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=stefarnold&repoName=hello-cf&branch=master&pipelineName=hello-cf&accountName=stefarnold&type=cf-1)]( https://g.codefresh.io/repositories/stefarnold/hello-cf/builds?filter=trigger:build;branch:master;service:5af1d07a3b18ab0001291931~hello-cf)
+
+
