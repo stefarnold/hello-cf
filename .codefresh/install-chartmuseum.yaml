@@ -1,4 +1,9 @@
-version: '1.0'
+# Must set the following environment variables in the pipeline:
+#
+# - CUSTOM_env_secret_BASIC__AUTH__USER (encrypted)
+# - CUSTOM_env_secret_BASIC__AUTH__PASS (encrypted)
+#
+version: "1.0"
 steps:
   install_chartmuseum:
     image: codefresh/cfstep-helm:2.7.2
@@ -12,3 +17,4 @@ steps:
     - CUSTOM_env_open_DISABLE__API=false
     - CUSTOM_service_type=NodePort
     - CUSTOM_service_NodePort=31122
+
