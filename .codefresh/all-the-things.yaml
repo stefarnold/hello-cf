@@ -9,7 +9,7 @@ version: "1.0"
 steps:
 
   CheckVersions:
-    image: codefresh/cfstep-helm:2.7.2
+    image: alpine/git:1.0.4
     commands:
     - export DOCKER_VERSION=$(cat VERSION)
     - export CHART_VERSION=$(cat hello-cf/Chart.yaml | grep -m 1 ^version:| awk '{print $2}')
@@ -19,7 +19,7 @@ steps:
     - cf_export DOCKER_VERSION=$DOCKER_VERSION CHART_VERSION=$CHART_VERSION PUSH_DOCKER=$PUSH_DOCKER PUSH_HELM=$PUSH_HELM TRIGGER_DEPLOY=$TRIGGER_DEPLOY
 
   TestCode:
-    image: codefresh/cfstep-helm:2.7.2
+    image: alpine/git:1.0.4
     commands:
     - echo "everything fine here, move along!"
 
