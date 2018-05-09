@@ -1,0 +1,14 @@
+# Must set the following environment variables in the pipeline:
+#
+# - RELEASE_NAME
+# - KUBE_CONTEXT
+# - CHART_REPO_URL
+#
+version: "1.0"
+steps:
+  install_chartmuseum:
+    image: codefresh/cfstep-helm:2.7.2
+    environment:
+    - ACTION=install
+    - CHART_REF=hello-cf
+
