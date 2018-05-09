@@ -1,5 +1,6 @@
 # Must set the following environment variables in the pipeline:
 #
+# - DEPLOY_STAGING_PIPELINE_ID
 # - CHART_REPO_URL
 # - HELM_REPO_USERNAME (encrypted)
 # - HELM_REPO_PASSWORD (encrypted)
