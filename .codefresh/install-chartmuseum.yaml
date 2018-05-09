@@ -1,0 +1,14 @@
+version: '1.0'
+steps:
+  install_chartmuseum:
+    image: codefresh/cfstep-helm:2.7.2
+    environment:
+    - ACTION=install
+    - CHART_REF=chartmuseum
+    - CHART_REPO_URL=https://kubernetes-charts.storage.googleapis.com
+    - RELEASE_NAME=cm-webinar
+    - KUBE_CONTEXT=local
+    - CUSTOM_env_open_AUTH__ANONYMOUS__GET=true
+    - CUSTOM_env_open_DISABLE__API=false
+    - CUSTOM_service_type=NodePort
+    - CUSTOM_service_NodePort=31122

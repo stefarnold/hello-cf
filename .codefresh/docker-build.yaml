@@ -1,0 +1,9 @@
+version: '1.0'
+steps:
+
+  # TODO: build docker image
+
+  trigger_helm_upgrade_staging_pipeline:
+    image: codefresh/cli:latest
+    commands:
+      - codefresh run $HELM_UPGRADE_STAGING_PIPELINE_ID --branch=master --detach
