@@ -41,7 +41,7 @@ steps:
   TestChart:
     image: codefresh/cfstep-helm:2.7.2
     commands:
-    - echo "everything fine here, move along!"
+    - helm lint hello-cf/
 
   PackageChart:
     image: codefresh/cfstep-helm:2.7.2
