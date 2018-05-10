@@ -33,6 +33,6 @@ The images were created to be used as simple backends for various load balancing
  
 
 Build Status   
-[![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=stefarnold&repoName=hello-cf&branch=master&pipelineName=hello-cf&accountName=stefarnold&type=cf-1)]( https://g.codefresh.io/repositories/stefarnold/hello-cf/builds?filter=trigger:build;branch:master;service:5af1d07a3b18ab0001291931~hello-cf)
+[![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=stefarnold&repoName=hello-cf&branch=master&pipelineName=all-the-things&accountName=stefarnold&type=cf-1)]( https://g.codefresh.io/repositories/stefarnold/hello-cf/builds?filter=trigger:build;branch:master;service:5af36ff6b1d7540001731bec~all-the-things)
 
 
