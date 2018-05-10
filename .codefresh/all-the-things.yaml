@@ -13,8 +13,8 @@ steps:
     commands:
     - export DOCKER_VERSION=$(cat VERSION)
     - export CHART_VERSION=$(cat hello-cf/Chart.yaml | grep -m 1 ^version:| awk '{print $2}')
-    - export PUSH_DOCKER=$(if [[ "$(git log --format=\"%H\" -n 1 -- VERSION)" == ${{CF_REVISION}} ]]; then echo "true"; else echo "false"; fi)
-    - export PUSH_HELM=$(if [[ "$(git log --format=\"%H\" -n 1 -- hello-cf/Chart.yaml)" == ${{CF_REVISION}} ]]; then echo "true"; else echo "false"; fi)
+    - export PUSH_DOCKER=$(if [[ "$(git log --format='%H' -n 1 -- VERSION)" == "${{CF_REVISION}}" ]]; then echo "true"; else echo "false"; fi)
+    - export PUSH_HELM=$(if [[ "$(git log --format='%H' -n 1 -- hello-cf/Chart.yaml)" == "${{CF_REVISION}}" ]]; then echo "true"; else echo "false"; fi)
     - export TRIGGER_DEPLOY=$(if [[ "$PUSH_DOCKER" == "true" ]] || [[ "$PUSH_HELM" == "true" ]]; then echo "true"; else echo "false"; fi)
     - cf_export DOCKER_VERSION=$DOCKER_VERSION CHART_VERSION=$CHART_VERSION PUSH_DOCKER=$PUSH_DOCKER PUSH_HELM=$PUSH_HELM TRIGGER_DEPLOY=$TRIGGER_DEPLOY
 
