@@ -6,9 +6,18 @@
 #
 version: "1.0"
 steps:
+
   DeployStaging:
     image: codefresh/cfstep-helm:2.7.2
     environment:
     - ACTION=install
     - CHART_REF=hello-cf
 
+  GetServiceURL:
+    image: codefresh/cfstep-helm:2.7.2
+    commands:
+    - export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nod
+ePort}" services $RELEASE_NAME-hello-cf)
+    - export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].stat
+us.addresses[0].address}")
+    - echo http://$NODE_IP:$NODE_PORT
