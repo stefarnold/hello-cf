@@ -37,6 +37,16 @@ steps:
       condition:
         all:
           VersionChanged: '"${{PUSH_DOCKER}}" == "true"'
+  
+  PushDockerLatest:
+    type: push
+    candidate: '${{BuildDocker}}'
+    tag: latest
+    registry: StefHub
+    when:
+      condition:
+        all:
+          VersionChanged: '"${{PUSH_DOCKER}}" == "true"'
 
   TestChart:
     image: codefresh/cfstep-helm:2.7.2
