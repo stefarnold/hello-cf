@@ -15,6 +15,5 @@ steps:
     - KUBE_CONTEXT=eks-joshtest
     - CUSTOM_env_open_AUTH__ANONYMOUS__GET=true
     - CUSTOM_env_open_DISABLE__API=false
-    - CUSTOM_service_type=NodePort
-    - CUSTOM_service_NodePort=31122
+    - CUSTOM_service_type=LoadBalancer
 
