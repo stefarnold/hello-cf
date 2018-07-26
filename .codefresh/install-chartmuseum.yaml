@@ -12,7 +12,7 @@ steps:
     - CHART_REF=chartmuseum
     - CHART_REPO_URL=https://kubernetes-charts.storage.googleapis.com
     - RELEASE_NAME=cm-webinar
-    - KUBE_CONTEXT=local
+    - KUBE_CONTEXT=eks-joshtest
     - CUSTOM_env_open_AUTH__ANONYMOUS__GET=true
     - CUSTOM_env_open_DISABLE__API=false
     - CUSTOM_service_type=NodePort
